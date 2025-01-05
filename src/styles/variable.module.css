@@ -1,0 +1,10 @@
+@value black: #0c0a09;
+@value grey: #292524;
+@value white: #f5f5f4;
+
+@value txtSmall: 1.2rem;
+@value txtMedium: 1.6rem;
+@value txtLarge: 2.3rem;
+@value txtXL: 3rem;
+
+@value defaultPadding: 2rem 4rem;

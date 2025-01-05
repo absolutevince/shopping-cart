@@ -1,0 +1,23 @@
+@value black, white from "variable.module.css";
+
+.root {
+  background-color: black;
+  height: 100vh;
+  color: white;
+}
+
+.txtSmall {
+  font-size: 1.2rem;
+}
+
+.txtMedium {
+  font-size: 1.6rem;
+}
+
+.txtLarge {
+  font-size: 2.3rem;
+}
+
+.txtXL {
+  font-size: 3rem;
+}

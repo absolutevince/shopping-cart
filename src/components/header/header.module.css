@@ -1,0 +1,19 @@
+@value grey, white, txtXL, txtMedium, defaultPadding from "../../styles/variable.module.css";
+
+.default {
+  background-color: grey;
+  padding: defaultPadding;
+  display: flex;
+  justify-content: space-between;
+
+  h1 {
+    font-size: txtXL;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-size: txtMedium;
+  }
+}
