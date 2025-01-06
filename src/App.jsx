@@ -5,7 +5,7 @@ import globalcss from "./styles/global.module.css";
 
 function App() {
   return (
-    <div className={`${globalcss.root}`}>
+    <div data-testid="app" className={globalcss.root}>
       <Header />
       <Outlet />
     </div>

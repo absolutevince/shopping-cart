@@ -1,0 +1,22 @@
+@value grey, white, txtXL, txtMedium, defaultPadding from "../../styles/variable.module.css";
+
+.default {
+	padding: defaultPadding;
+	padding-top: 8rem;
+
+	& h2 {
+		font-size: txtXL;
+		max-width: 30ch;
+		word-wrap: wrap;
+	}
+
+	& p {
+		margin-top: 2rem;
+		font-size: txtMedium;
+	}
+
+	& a {
+		margin-top: 3rem;
+		font-size: txtMedium;
+	}
+}

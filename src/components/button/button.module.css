@@ -1,0 +1,20 @@
+@value grey, white, black from "../../styles/variable.module.css";
+
+.buttonOnDark {
+	background-color: white;
+	padding: 0.5em 1em;
+	border: 1px solid grey;
+	color: black;
+}
+
+.buttonOnLight {
+	composes: buttonOnDark;
+	background-color: black;
+	color: white;
+}
+
+.buttonOnDark:hover {
+	background-color: black;
+	color: white;
+	border: grey;
+}

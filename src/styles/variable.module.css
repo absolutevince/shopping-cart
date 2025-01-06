@@ -1,5 +1,5 @@
 @value black: #0c0a09;
-@value grey: #292524;
+@value grey: #1c1917;
 @value white: #f5f5f4;
 
 @value txtSmall: 1.2rem;
@@ -8,3 +8,5 @@
 @value txtXL: 3rem;
 
 @value defaultPadding: 2rem 4rem;
+@value headerHeight: 5rem;
+@value mainHeight: calc(100vh - 13rem);

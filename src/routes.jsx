@@ -9,7 +9,7 @@ export const routes = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
-      { path: "/", element: <Home /> },
+      { index: true, element: <Home /> },
       { path: "/shop", element: <Shop /> },
       { path: "/cart", element: <Cart /> },
     ],

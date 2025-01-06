@@ -1,21 +1,27 @@
-import { Link } from "react-router-dom";
-import css from "./header.module.css";
+import style from "./header.module.css";
+import CustomLink from "../link/CustomLink";
 
 export default function Header() {
-	return (
-		<header className={`${css.default}`}>
-			<h1>GameBreaking</h1>
-			<ul>
-				<li>
-					<Link to="/">Home</Link>
-				</li>
-				<li>
-					<Link to="/shop">Shop</Link>
-				</li>
-				<li>
-					<Link to="/cart">Cart</Link>
-				</li>
-			</ul>
-		</header>
-	);
+  return (
+    <header className={style.default}>
+      <h1>GameBreaking</h1>
+      <ul>
+        <li>
+          <CustomLink to="/" variant="link dark">
+            Home
+          </CustomLink>
+        </li>
+        <li>
+          <CustomLink to="/shop" variant="link dark">
+            Shop
+          </CustomLink>
+        </li>
+        <li>
+          <CustomLink to="/cart" variant="link dark">
+            Cart
+          </CustomLink>
+        </li>
+      </ul>
+    </header>
+  );
 }

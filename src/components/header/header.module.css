@@ -1,10 +1,12 @@
-@value grey, white, txtXL, txtMedium, defaultPadding from "../../styles/variable.module.css";
+@value grey, white, txtXL, txtMedium, defaultPadding, headerHeight from "../../styles/variable.module.css";
 
 .default {
   background-color: grey;
   padding: defaultPadding;
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  height: headerHeight;
 
   h1 {
     font-size: txtXL;
