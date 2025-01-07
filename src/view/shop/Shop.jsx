@@ -1,7 +1,12 @@
+import { useContext } from "react";
+import GamesContext from "../../hooks/gamesContext";
+
 export default function Shop() {
-	return (
-		<>
-			<h1>Shop</h1>
-		</>
-	);
+  const gamesList = useContext(GamesContext);
+
+  return (
+    <>
+      <h1>Shop</h1>
+    </>
+  );
 }
