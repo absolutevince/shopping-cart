@@ -4,10 +4,12 @@
 	padding: defaultPadding;
 	padding-top: 8rem;
 	min-height: min-height;
+	position: relative;
 }
 
 .games {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(150px, 30.33%));
+	grid-template-columns: repeat(auto-fit, minmax(300px, 30.33%));
+	justify-content: center;
 	gap: 1rem;
 }

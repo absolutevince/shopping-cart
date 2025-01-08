@@ -1,11 +1,11 @@
-import formatDataToCard from "../../utils/formatData";
+import formatData from "../../utils/formatData";
 import style from "./card.module.css";
 
-export default function Card({ data }) {
-  const game = formatDataToCard(data);
+export default function Card({ data, handlePreview }) {
+  const game = formatData(data);
 
   return (
-    <article className={style.default}>
+    <article className={style.default} onClick={handlePreview}>
       <div
         className={style.bgImage}
         style={{ backgroundImage: `url(${game.bgImage})` }}

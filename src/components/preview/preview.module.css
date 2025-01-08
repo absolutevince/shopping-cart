@@ -1,0 +1,66 @@
+@value blackDimmed, orange, defaultPadding, grey, white, txtLarge, txtXL, txtMedium from "../../styles/variable.module.css";
+
+.default {
+	position: fixed;
+	top: 5%;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: grey;
+	height: 500px;
+	width: calc(100% - 20rem);
+	z-index: 2;
+	border-radius: 1.2rem;
+	padding: defaultPadding;
+}
+
+.heading {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: defaultPadding;
+}
+
+.buttonDiv {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+}
+
+.imageSection {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem;
+}
+
+.bgImage {
+	height: 300px;
+	width: 100%;
+	background-size: cover;
+	background-origin: center;
+}
+
+.screenshots {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1rem;
+
+	& div {
+		background-size: cover;
+		background-origin: center;
+	}
+}
+
+.title {
+	font-size: txtXL;
+}
+
+.ratings {
+	font-size: txtMedium;
+	color: orange;
+}
+
+.bottomButton {
+	display: flex;
+	justify-content: end;
+	margin-top: 5rem;
+}
