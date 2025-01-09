@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import "./styles/reset.css";
 import globalcss from "./styles/global.module.css";
 import { Outlet } from "react-router-dom";

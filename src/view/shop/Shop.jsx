@@ -5,6 +5,7 @@ import GamesContext from "../../hooks/gamesContext";
 import CartContext from "../../hooks/cartContext";
 import Card from "../../components/card/Card";
 import Preview from "../../components/preview/Preview";
+import Loading from "../../components/loading/Loading";
 
 export default function Shop() {
   // TODO: Add page navigation
@@ -34,8 +35,9 @@ export default function Shop() {
         />
       )}
       <section className={style.games}>
-        {games.isLoading && <p>Loading...</p>}
+        {games.isLoading === true && <Loading />}
         {games.isLoading === false &&
+          games.error === null &&
           games.data.results.map((game) => (
             <Card
               key={game.id}
