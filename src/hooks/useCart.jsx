@@ -12,26 +12,17 @@ export default function useCart() {
       }
     }
     if (existing) {
-      const updatedCount = items.map((game) => {
-        if (game.id === item.id) {
-          const quantity = game.quantity + 1;
-          const totalPrice = game.originalPrice * quantity;
-          return { ...game, quantity, totalPrice };
-        }
-        return game;
-      });
-
-      setItems(updatedCount);
+      increaseQuantity(item.id);
     } else {
       setItems([...items, item]);
     }
   }
 
   function removeToCart(itemId) {
-    const updatedItems = items.filter((item) => {
+    const updated = items.filter((item) => {
       return item.id !== itemId;
     });
-    setItems(updatedItems);
+    setItems(updated);
   }
 
   function getQuantity() {
@@ -42,5 +33,45 @@ export default function useCart() {
     return items;
   }
 
-  return { getItems, addToCart, removeToCart, getQuantity };
+  function increaseQuantity(itemId) {
+    const updated = items.map((game) => {
+      if (game.id === itemId) {
+        return {
+          ...game,
+          quantity: game.quantity + 1,
+          totalPrice: game.originalPrice * (game.quantity + 1),
+        };
+      }
+      return game;
+    });
+
+    setItems(updated);
+  }
+
+  function decreaseQuantity(itemId) {
+    const updated = items.map((game) => {
+      if (game.id === itemId) {
+        if (game.quantity === 1) {
+          return game;
+        }
+        return {
+          ...game,
+          quantity: game.quantity - 1,
+          totalPrice: game.originalPrice * (game.quantity - 1),
+        };
+      }
+      return game;
+    });
+
+    setItems(updated);
+  }
+
+  return {
+    getItems,
+    addToCart,
+    removeToCart,
+    getQuantity,
+    increaseQuantity,
+    decreaseQuantity,
+  };
 }

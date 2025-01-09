@@ -1,16 +1,23 @@
-@value grey, white, black from "../../styles/variable.module.css";
+@value grey, white, black, orange from "../../styles/variable.module.css";
 
 .buttonOnDark {
 	background-color: white;
 	padding: 0.5em 1em;
 	border: 1px solid grey;
 	color: black;
+	cursor: pointer;
 }
 
 .buttonOnLight {
 	composes: buttonOnDark;
 	background-color: black;
 	color: white;
+}
+
+.buttonError {
+	composes: buttonOnDark;
+	background-color: orange;
+	color: grey;
 }
 
 .buttonOnDark:hover {

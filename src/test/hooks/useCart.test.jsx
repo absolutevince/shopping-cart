@@ -92,4 +92,50 @@ describe("Cart", async () => {
 
     expect(result.current.getItems()[0].totalPrice).toBe(24);
   });
+
+  it("increase quantity", () => {
+    const { result } = renderHook(() => useCart());
+
+    act(() => {
+      result.current.addToCart(sampleItems[0]);
+    });
+
+    act(() => {
+      result.current.increaseQuantity(0);
+    });
+
+    expect(result.current.getItems()[0].quantity).toBe(2);
+  });
+
+  it("decrease quantity", () => {
+    const { result } = renderHook(() => useCart());
+
+    act(() => {
+      result.current.addToCart(sampleItems[0]);
+    });
+
+    act(() => {
+      result.current.addToCart(sampleItems[0]);
+    });
+
+    act(() => {
+      result.current.decreaseQuantity(0);
+    });
+
+    expect(result.current.getItems()[0].quantity).toBe(1);
+  });
+
+  it("prevent from decreasing the quantity to zero", () => {
+    const { result } = renderHook(() => useCart());
+
+    act(() => {
+      result.current.addToCart(sampleItems[0]);
+    });
+
+    act(() => {
+      result.current.decreaseQuantity(0);
+    });
+
+    expect(result.current.getItems()[0].quantity).toBe(1);
+  });
 });
