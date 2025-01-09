@@ -1,0 +1,6 @@
+@value grey, white, txtXL, txtMedium, defaultPadding from "../../styles/variable.module.css";
+
+.default {
+	padding: defaultPadding;
+	padding-top: 8rem;
+}

@@ -1,7 +1,9 @@
+import style from "./cart.module.css";
+
 export default function Cart() {
-	return (
-		<>
-			<h1>Cart</h1>
-		</>
-	);
+  return (
+    <div className={style.default}>
+      <section></section>
+    </div>
+  );
 }

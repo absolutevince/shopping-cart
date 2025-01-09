@@ -1,9 +1,8 @@
 import Button from "../button/Button";
 import formatData from "../../utils/formatData";
 import style from "./preview.module.css";
-import { scryRenderedComponentsWithType } from "react-dom/test-utils";
 
-export default function Preview({ data, handleClose }) {
+export default function Preview({ data, handleClose, handleAddToCart }) {
   const game = formatData(data);
   const screenShots = [
     game.screenShots[1],
@@ -12,13 +11,15 @@ export default function Preview({ data, handleClose }) {
     game.screenShots[4],
   ];
 
+  console.log(game);
+
   return (
     <div className={style.default}>
       <section className={style.heading} role="heading">
         <h4 className={style.title}>{game.title}</h4>
         <div className={style.buttonDiv}>
           <span className={style.ratings}>{game.esrbRating.name}</span>
-          <Button>Add To Cart</Button>
+          <Button onClick={handleAddToCart}>Add To Cart</Button>
         </div>
       </section>
       <section className={style.imageSection}>
@@ -37,7 +38,7 @@ export default function Preview({ data, handleClose }) {
         </div>
       </section>
 
-      <div class={style.bottomButton}>
+      <div className={style.bottomButton}>
         <Button onClick={handleClose}>Close</Button>
       </div>
     </div>
