@@ -1,4 +1,5 @@
 import { useState } from "react";
+import formatData from "../utils/formatData";
 
 export default function useCart() {
   const [items, setItems] = useState([]);
@@ -13,10 +14,11 @@ export default function useCart() {
     if (existing) {
       const updatedCount = items.map((game) => {
         if (game.id === item.id) {
-          const count = game.count + 1;
-          const price = game.price * count;
-          return { ...game, count, price };
+          const quantity = game.quantity + 1;
+          const totalPrice = game.originalPrice * quantity;
+          return { ...game, quantity, totalPrice };
         }
+        return game;
       });
 
       setItems(updatedCount);
@@ -32,9 +34,13 @@ export default function useCart() {
     setItems(updatedItems);
   }
 
-  function getItemsCount() {
+  function getQuantity() {
     return items.length;
   }
 
-  return { items, addToCart, removeToCart, getItemsCount };
+  function getItems() {
+    return items;
+  }
+
+  return { getItems, addToCart, removeToCart, getQuantity };
 }

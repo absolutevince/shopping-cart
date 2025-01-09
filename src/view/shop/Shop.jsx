@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import style from "./shop.module.css";
+import formatData from "../../utils/formatData";
 import GamesContext from "../../hooks/gamesContext";
 import CartContext from "../../hooks/cartContext";
 import Card from "../../components/card/Card";
@@ -19,8 +20,8 @@ export default function Shop() {
     setPreview({ modalOpen: false, game: null });
   };
 
-  const handleAddToCart = (itemId) => {
-    cart.addToCart(itemId);
+  const handleAddToCart = (item) => {
+    cart.addToCart(formatData(item));
   };
 
   return (
@@ -28,7 +29,7 @@ export default function Shop() {
       {preview.modalOpen && (
         <Preview
           data={preview.game}
-          handleAddToCart={() => handleAddToCart(preview.game.id)}
+          handleAddToCart={() => handleAddToCart(preview.game)}
           handleClose={handleClose}
         />
       )}

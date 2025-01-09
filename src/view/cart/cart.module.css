@@ -1,6 +1,29 @@
-@value grey, white, txtXL, txtMedium, defaultPadding from "../../styles/variable.module.css";
+@value grey, white, txtXL, txtLarge, txtMedium, defaultPadding from "../../styles/variable.module.css";
 
 .default {
 	padding: defaultPadding;
 	padding-top: 8rem;
+}
+
+.list {
+	display: grid;
+	gap: 1rem;
+}
+
+.item {
+	border: 1px solid white;
+	padding: 1rem;
+	border-radius: 1rem;
+	display: grid;
+	grid-template-columns: 3fr 1fr 1fr;
+	align-items: center;
+}
+
+.title {
+	font-size: txtLarge;
+}
+
+.quantity,
+.price {
+	font-size: txtMedium;
 }
