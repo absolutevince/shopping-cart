@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 
-const URL =
-  "https://api.rawg.io/api/games?key=f008b5f591794723b4303e2b1bb23169";
+const API_KEY = import.meta.env.VITE_API_KEY;
+
+const URL = `https://api.rawg.io/api/games?key=${API_KEY}`;
 
 export default function useGames() {
   const [state, setState] = useState({
