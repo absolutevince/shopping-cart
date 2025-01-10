@@ -1,0 +1,12 @@
+@value grey, white, txtXL, txtMedium, defaultPadding, headerHeight from "../../styles/variable.module.css";
+
+.default {
+	padding: defaultPadding;
+	background-color: white;
+	color: black;
+	position: fixed;
+	top: 1rem;
+	left: 50%;
+	transform: translateX(-50%);
+	border-radius: 1.2rem;
+}

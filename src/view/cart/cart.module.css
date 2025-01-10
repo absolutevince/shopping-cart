@@ -47,3 +47,19 @@
 .price {
 	font-size: txtMedium;
 }
+
+.empty {
+	font-size: txtXL;
+}
+
+.checkout {
+	justify-self: end;
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	margin-bottom: 1rem;
+
+	&>span {
+		font-size: txtLarge;
+	}
+}

@@ -6,6 +6,10 @@ export default function useCart() {
   const [newAddedCount, setNewAddedCount] = useState(0);
   const [popupView, setPopupView] = useState(false);
 
+  function getAllTotalPrice() {
+    return items.reduce((acc, curr) => acc + curr.totalPrice, 0);
+  }
+
   function addToCart(item) {
     let existing = false;
     for (let i = 0; i < items.length; i++) {
@@ -93,5 +97,6 @@ export default function useCart() {
     popupView,
     openPopupCart,
     closePopupCart,
+    getAllTotalPrice,
   };
 }
