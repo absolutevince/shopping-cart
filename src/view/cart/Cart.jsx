@@ -1,10 +1,14 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import CartContext from "../../hooks/cartContext";
 import Button from "../../components/button/Button";
 import style from "./cart.module.css";
 
 export default function Cart() {
   const cart = useContext(CartContext);
+
+  useEffect(() => {
+    cart.resetNewAddedCount();
+  }, []);
 
   const handleIncreaseQuantity = (gameId) => {
     cart.increaseQuantity(gameId);
@@ -42,7 +46,7 @@ export default function Cart() {
                 </div>
                 <Button
                   variant={"buttonError"}
-                  onCliBk={() => handleRemoveToCart(game.id)}
+                  onClick={() => handleRemoveToCart(game.id)}
                 >
                   Remove
                 </Button>

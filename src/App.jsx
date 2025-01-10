@@ -13,12 +13,12 @@ function App() {
 
   return (
     <div data-testid="app" className={globalcss.root}>
-      <Header />
-      <GamesContext.Provider value={games}>
-        <CartContext.Provider value={cart}>
+      <CartContext.Provider value={cart}>
+        <Header />
+        <GamesContext.Provider value={games}>
           <Outlet />
-        </CartContext.Provider>
-      </GamesContext.Provider>
+        </GamesContext.Provider>
+      </CartContext.Provider>
     </div>
   );
 }

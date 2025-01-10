@@ -3,6 +3,8 @@ import formatData from "../utils/formatData";
 
 export default function useCart() {
   const [items, setItems] = useState([]);
+  const [newAddedCount, setNewAddedCount] = useState(0);
+  const [cartView, setCartView] = useState(false);
 
   function addToCart(item) {
     let existing = false;
@@ -16,6 +18,7 @@ export default function useCart() {
     } else {
       setItems([...items, item]);
     }
+    increaseNewAddedCount();
   }
 
   function removeToCart(itemId) {
@@ -66,6 +69,14 @@ export default function useCart() {
     setItems(updated);
   }
 
+  function increaseNewAddedCount() {
+    setNewAddedCount(newAddedCount + 1);
+  }
+
+  function resetNewAddedCount() {
+    setNewAddedCount(0);
+  }
+
   return {
     getItems,
     addToCart,
@@ -73,5 +84,7 @@ export default function useCart() {
     getQuantity,
     increaseQuantity,
     decreaseQuantity,
+    newAddedCount,
+    resetNewAddedCount,
   };
 }

@@ -19,3 +19,7 @@
     font-size: txtMedium;
   }
 }
+
+.cartLink> :first-child {
+  margin-right: 5px;
+}

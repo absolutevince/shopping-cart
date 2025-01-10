@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import style from "./shop.module.css";
 import formatData from "../../utils/formatData";
 import GamesContext from "../../hooks/gamesContext";

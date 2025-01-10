@@ -27,7 +27,7 @@ describe("Get Games list", () => {
     let { result } = await (async () => renderHook(() => useGames()))();
 
     // I don't why I need this , but do. I don't have any updates to do so I put empty async function.
-    await act(async () => {});
+    await act(async () => { });
 
     expect(result.current.state.data).toEqual(mockResolve);
   });
@@ -59,5 +59,16 @@ describe("Get Games list", () => {
         Error,
       );
     });
+  });
+
+  it("handle fetching error", async () => {
+    fetch.mockImplementation(() => Promis.reject(new Error("Fetch Error")));
+    let { result } = await (async () => renderHook(() => useGames()))();
+
+    await act(async () => {
+      result.current.changePage(1);
+    });
+
+    expect(result.current.state.error).toBeInstanceOf(Error);
   });
 });
