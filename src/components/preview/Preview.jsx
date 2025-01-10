@@ -1,9 +1,13 @@
 import Button from "../button/Button";
 import formatData from "../../utils/formatData";
 import style from "./preview.module.css";
+import { useContext, useEffect } from "react";
+import CartContext from "../../hooks/cartContext";
 
 export default function Preview({ data, handleClose, handleAddToCart }) {
+  const { closePopupCart } = useContext(CartContext);
   const game = formatData(data);
+
   const screenShots = [
     game.screenShots[1],
     game.screenShots[2],
@@ -11,7 +15,9 @@ export default function Preview({ data, handleClose, handleAddToCart }) {
     game.screenShots[4],
   ];
 
-  console.log(game);
+  useEffect(() => {
+    closePopupCart();
+  }, []);
 
   return (
     <div className={style.default}>

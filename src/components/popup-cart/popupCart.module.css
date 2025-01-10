@@ -1,0 +1,49 @@
+@value grey, white, txtSmall, txtXL, txtMedium, defaultPadding from "../../styles/variable.module.css";
+
+.default {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	right: 3rem;
+	top: 9rem;
+	border: 1px solid white;
+	padding: 1rem;
+	background-color: grey;
+	z-index: 2;
+	min-width: 30rem;
+	max-height: 30rem;
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+}
+
+.item {
+	font-size: txtSmall;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 0.5rem 1rem;
+	width: 100%;
+
+	&> :last-child {
+		background-color: white;
+		color: black;
+		padding: 1rem;
+		border-radius: 50%;
+	}
+}
+
+.buttons {
+	display: flex;
+	align-self: end;
+	margin-top: 1rem;
+
+	&> :first-child {
+		display: flex;
+		align-items: center;
+	}
+}

@@ -4,7 +4,7 @@ import formatData from "../utils/formatData";
 export default function useCart() {
   const [items, setItems] = useState([]);
   const [newAddedCount, setNewAddedCount] = useState(0);
-  const [cartView, setCartView] = useState(false);
+  const [popupView, setPopupView] = useState(false);
 
   function addToCart(item) {
     let existing = false;
@@ -30,10 +30,6 @@ export default function useCart() {
 
   function getQuantity() {
     return items.length;
-  }
-
-  function getItems() {
-    return items;
   }
 
   function increaseQuantity(itemId) {
@@ -77,8 +73,16 @@ export default function useCart() {
     setNewAddedCount(0);
   }
 
+  function closePopupCart() {
+    setPopupView(false);
+  }
+
+  function openPopupCart() {
+    setPopupView(true);
+  }
+
   return {
-    getItems,
+    items,
     addToCart,
     removeToCart,
     getQuantity,
@@ -86,5 +90,8 @@ export default function useCart() {
     decreaseQuantity,
     newAddedCount,
     resetNewAddedCount,
+    popupView,
+    openPopupCart,
+    closePopupCart,
   };
 }

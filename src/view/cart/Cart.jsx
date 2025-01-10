@@ -8,6 +8,7 @@ export default function Cart() {
 
   useEffect(() => {
     cart.resetNewAddedCount();
+    cart.closePopupCart();
   }, []);
 
   const handleIncreaseQuantity = (gameId) => {

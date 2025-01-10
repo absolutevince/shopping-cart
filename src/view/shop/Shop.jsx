@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import style from "./shop.module.css";
 import formatData from "../../utils/formatData";
 import GamesContext from "../../hooks/gamesContext";
@@ -24,6 +24,10 @@ export default function Shop() {
   const handleAddToCart = (item) => {
     cart.addToCart(formatData(item));
   };
+
+  useEffect(() => {
+    cart.closePopupCart();
+  }, []);
 
   return (
     <div className={style.default}>
