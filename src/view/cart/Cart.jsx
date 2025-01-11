@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import CartContext from "../../hooks/cartContext";
 import Button from "../../components/button/Button";
-import CheckoutMessage from "../../components/checkout-message/CheckoutMessage";
+import PopupMessage from "../../components/popup-message/PopupMessage";
 import style from "./cart.module.css";
 
 export default function Cart() {
@@ -28,6 +28,7 @@ export default function Cart() {
 
   const handleCheckout = () => {
     setCheckedOut(true);
+
     setTimeout(() => {
       setCheckedOut(false);
     }, 2000);
@@ -35,7 +36,9 @@ export default function Cart() {
 
   return (
     <div className={style.default}>
-      {checkedOut && <CheckoutMessage />}
+      {checkedOut && (
+        <PopupMessage message="Checkout Successful, Thank you for purchasing" />
+      )}
       <section>
         {quantity > 0 && (
           <div className={style.checkout}>
